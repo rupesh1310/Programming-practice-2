@@ -1,48 +1,61 @@
 class Person
-	{
-		private String lastName;
-		private String firstName;
-		private int age;
-	public Person(String last, String first, int a)
-		{
-			lastName = last;
-			firstName = first;
-			age = a;
-		}
-	public void displayPerson()
-		{
-			System.out.print("   last name: " + lastName);
-			System.out.print(", First name: " + firstName);
-			System.out.println(", Age: " + age);
-		}
+   {
+   private String lastName;
+   private String firstName;
+   private int age;
 
-		public String getLast()
-		{ return lastName; }
-	}
+   public Person(String last, String first, int a)
+      {                               // constructor
+      lastName = last;
+      firstName = first;
+      age = a;
+      }
+
+   public void displayPerson()
+      {
+      System.out.print("   Last name: " + lastName);
+      System.out.print(", First name: " + firstName);
+      System.out.println(", Age: " + age);
+      }
+
+   public String getLast()           // get last name
+      { return lastName; }
+   }  // end class Person
 
 class ArrayInOb
-	{
-		private Person[] a;
-		private int nElems;
-	public void insert(String last, String first, int age)
-		{
-			a[nElems] = new Person(last, first, age);
-			nElems++;
-		}
-	public void display()
-		{
-		 for(int j = 0; j < nElems; j++)
-		 	a[j].displayPerson();	
-		}
-public void insertionSort()
-	{
-		int in, out;
+   {
+   private Person[] a;               // ref to array a
+   private int nElems;               // number of data items
 
-		for(out = 1; out < nElems; out++)
-			{
-				Person temp = a[out];
-				in =out;
-	while(in>0 &&               // until smaller one found,
+   public ArrayInOb(int max)         // constructor
+      {
+      a = new Person[max];               // create the array
+      nElems = 0;                        // no items yet
+      }
+
+
+   public void insert(String last, String first, int age)
+      {
+      a[nElems] = new Person(last, first, age);
+      nElems++;                          // increment size
+      }
+
+   public void display()             // displays array contents
+      {
+      for(int j=0; j<nElems; j++)       // for each element,
+         a[j].displayPerson();          // display it
+      }
+
+   public void insertionSort()
+      {
+      int in, out;
+
+      for(out=1; out<nElems; out++)
+         {
+         Person temp = a[out];       // out is dividing line
+         in = out;                   // start shifting at out
+
+         while(in>0 &&               // until smaller one found,
                a[in-1].getLast().compareTo(temp.getLast())>0)
             {
             a[in] = a[in-1];         // shift item to the right
@@ -50,10 +63,9 @@ public void insertionSort()
             }
          a[in] = temp;               // insert marked item
          }  // end for
-      }  // end of insertionSort
-
-  
-  class ObjectSortApp
+      }  // end insertionSort()
+   }  
+class objectsorting
    {
    public static void main(String[] args)
       {
