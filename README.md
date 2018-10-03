@@ -1,3 +1,3 @@
 # 
-![](https://img.shields.io/badge/Programming-practice-2-blue.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Programming-practice2-blue.svg?style=for-the-badge)
 
