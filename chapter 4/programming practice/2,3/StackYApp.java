@@ -37,7 +37,7 @@ class Deque {
    	if(right == maxSize -1)		// deal with wraparound
          right = -1;
       queArray[++right] = j;     // increment rear and insert
-      if (left == maxSize) {		// initializes left
+      if (left == maxSize) {		
 			left = 0;
 		}
       nItems++;  
